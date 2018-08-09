@@ -197,7 +197,7 @@ bar {
 ## x for eXit (i3lock)
 bindsym $mod+Shift+x exec ~/.config/i3/scripts/lock.sh
 ## p for Pdf (MAster PDF Editor 5)
-indsym $mod+Shift+p exec masterpdfeditor5
+bindsym $mod+Shift+p exec masterpdfeditor5
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +1% #increase sound volume

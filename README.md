@@ -4,32 +4,21 @@ These programs were installed for general use.
 Below is a table listing the programs, their use, and any associated files.
 
 ```bash
-sudo apt-get install chromium htop neofetch blueman i3 arc-theme lxappearance
-compton scrot imagemagick i3blocks arandr pavucontrol feh ranger vim git
+sudo apt-get install chromium arc-theme lxappearance git gnome-tweak-tool
 
 sudo snap install spotify slack mailspring
+
+sudo snap install sublime-text --classic
 ```
 
 | Program | Reason | Associated Files |
 | --- | --- | --- |
 | Chromium | General Browsing and Work | |
-| Htop | A system manager | |
-| Neofetch | System information | |
-| Blueman | Managing Bluetooth in i3 | |
-| i3 | i3 window 'tiling' manager | i3/config && i3/key.png && i3/scripts &&
-.fonts |
 | Arc-theme | Theme to make Ubuntu darker | |
 | Lxappearance | Used to apply arc-theme & San Fran font | .fonts && arc-theme |
-| Compton | For adding sweet transitions | |
-| Scrot | For taking screenshots | |
-| Imagemagick | For centering an image with i3lock | |
-| i3blocks | For sprucing up the i3bar | i3/i3blocks.conf |
-| Arandr | For aranging monitors | |
-| Pavucontrol | For controling volume | |
-| Feh | For setting desktop background | |
-| Ranger | Terminal based file manager with vim-like controls | |
-| Vim | Editor | .vimrc |
+| Sublime Text 3 | Editor | |
 | Git | Version control for programs and dotfiles | |
+| Gnome Tweak Tool | For using gTile | |
 
 ## Programs That Require a '.deb' Download
 
@@ -72,6 +61,12 @@ sudo apt-get install ukuu
 sudo ukuu-gtk
 ```
 
+Install gTile
+
+```bash
+git clone https://github.com/gTile/gTile.git ~/.local/share/gnome-shell/extensions/gTile@vibou
+```
+
 | Program | Use |
 | --- | --- |
 | Dropbox | For easy caryover between machines & backup |
@@ -90,22 +85,53 @@ sudo apt-get install r-base-core
 ```
 
 LaTeX Programming Language
+
 ```bash
 sudo apt-get install texlive-latex-base
 ```
 
-## Additiona Instructions
+## For Lab (Genetics Tools)
 
-I would recommend downloading all the programs and then moving the whole 'i3/'
-directory to '~/.config'. '.vimrc' & '.fonts/' should be placed in the home
-directory.  
+Java for running Trimmomatic-0.38
 
-After downloading i3 you must restart your computer and select it before
-logging in. There should be a gear next to the log in prompt for selection.
+```bash
+sudo apt-get isntall default-jre
+```
 
-After i3 is selected press mod+d (Super + d) and type 'lxappearance'. Hit enter
-and use lxappearance to change the theme to 'arc-dark' and the font to 'San Fran
-13 Regular'. 
+Trimmomatic-0.38 for cleaning up reads
+
+<http://www.usadellab.org/cms/?page=trimmomatic>
+
+SPAdes v3.12 for assembly
+
+<http://cab.spbu.ru/files/release3.12.0/manual.html>
+
+Go to the directory you want SPAdes installed in.
+in $HOME make the bin directory
+
+```bash
+mkdir bin
+wget http://cab.spbu.ru/files/release3.12.0/SPAdes-3.12.0-Linux.tar.gz
+tar -xzf SPAdes-3.12.0-Linux.tar.gz
+rm SPAdes-3.12.0-Linux.tar.gz
+cd SPAdes-3.12.0-Linux/bin/
+```
+
+## Aliases
+
+These will be put in '~/.bashrc' at the end of the file
+
+```bash
+alias vpn='/opt/cisco/anyconnect/bin/vpnui'
+alias uga='ssh jb14470@sapelo2.gacrc.uga.edu'
+alias ugat='ssh jb14470@xfer.gacrc.uga.edu'
+alias trimmomatic='java -jar ~/bin/Trimmomatic-0.38/trimmomatic-0.38.jar'
+alias spades='~/bin/SPAdes-3.12.0-Linux/bin/spades.py'
+```
+
+## Additional Instructions
+
+'.fonts/' should be placed in the home directory. Use lxappearance to change the theme to 'arc-dark' and the font to 'San Fran 13 Regular'.
 
 Open chrome and install the arc-dark theme.
 
